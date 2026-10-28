@@ -904,3 +904,472 @@ a:focus-visible {
     transition-duration: .01ms !important;
   }
 }
+/* ==================================================
+   NEW EDITORIAL HOME
+   参考杂志 / 设计师简历风格
+================================================== */
+
+.editorial-hero {
+  width: min(var(--content), calc(100% - 80px));
+  min-height: auto;
+  padding: 48px 0 0;
+  display: block;
+}
+
+
+/* ---------- 第一部分 ---------- */
+
+.hero-intro {
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-kicker {
+  margin: 0 0 22px;
+  color: #d99728;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.hello-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(62px, 7vw, 98px);
+  font-weight: 400;
+  letter-spacing: -5px;
+  line-height: .87;
+}
+
+.hello-title em {
+  color: var(--green);
+  font-weight: 400;
+}
+
+.cn-name {
+  margin-top: 27px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.cn-name strong {
+  font-family: Georgia, "Microsoft YaHei", serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.cn-name span {
+  padding-left: 17px;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 2.5px;
+}
+
+.hero-summary {
+  max-width: 460px;
+  margin: 22px 0 0;
+  color: #666b62;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.hero-project-button {
+  width: min(330px, 100%);
+  margin-top: 26px;
+  padding: 13px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  background: #e5a329;
+  color: #20251f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.hero-project-button:hover {
+  transform: translateX(4px);
+  background: #edae39;
+}
+
+.hero-project-button span {
+  font-size: 15px;
+}
+
+
+/* ---------- 首页右侧视觉 ---------- */
+
+.hero-visual {
+  position: relative;
+  min-height: 455px;
+}
+
+.hero-photo {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 72%;
+  height: 355px;
+  overflow: hidden;
+  background: var(--green);
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 78%;
+  height: 78%;
+  left: -38px;
+  bottom: -30px;
+  background: #405842;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-label {
+  position: absolute;
+  left: 15px;
+  bottom: 14px;
+  padding: 7px 10px;
+  background: rgba(39, 50, 41, .88);
+  color: white;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+}
+
+.visual-number {
+  position: absolute;
+  z-index: 3;
+  top: 3px;
+  left: 5px;
+  color: var(--green);
+  font-size: 7px;
+  letter-spacing: 1.8px;
+  line-height: 1.7;
+}
+
+.visual-number strong {
+  font: 32px Georgia, serif;
+  letter-spacing: -1px;
+}
+
+.experience-badge {
+  position: absolute;
+  z-index: 4;
+  top: 80px;
+  left: 0;
+  min-width: 150px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: #e5a329;
+}
+
+.experience-badge strong {
+  font: 26px Georgia, serif;
+}
+
+.experience-badge span {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.profile-card {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: 0;
+  width: 285px;
+  padding: 23px 26px;
+  background: #202820;
+  color: white;
+}
+
+.profile-card > p {
+  margin: 0 0 12px;
+  color: #e6aa37;
+  font: italic 22px Georgia, serif;
+}
+
+.profile-card > strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-card > span {
+  display: block;
+  margin-top: 4px;
+  color: #c6cec3;
+  font-size: 9px;
+}
+
+.profile-line {
+  height: 1px;
+  margin: 15px 0;
+  background: rgba(255,255,255,.18);
+}
+
+.profile-card small {
+  color: #aeb8ac;
+  font-size: 7px;
+  letter-spacing: 1.1px;
+  line-height: 1.8;
+}
+
+
+/* ---------- 工作经历 + 专业能力 ---------- */
+
+.career-panel {
+  margin-top: 45px;
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  background: #354d3a;
+  color: white;
+}
+
+.career-column {
+  min-height: 220px;
+  padding: 28px 35px 30px;
+}
+
+.career-column + .career-column {
+  border-left: 1px solid rgba(255,255,255,.15);
+}
+
+.panel-title {
+  display: grid;
+  grid-template-columns: 24px auto 1fr;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.panel-title > span {
+  color: #e9a72f;
+  font-size: 8px;
+}
+
+.panel-title h2 {
+  margin: 0;
+  color: #e9a72f;
+  font: italic 27px Georgia, serif;
+}
+
+.panel-title small {
+  color: #b8c4b8;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.career-item {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,.13);
+}
+
+.career-index {
+  color: #e9a72f;
+  font: 13px Georgia, serif;
+}
+
+.career-item strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.career-item p {
+  margin: 3px 0 0;
+  color: #bdc7bd;
+  font-size: 9px;
+}
+
+.editorial-skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+
+.editorial-skills span {
+  padding: 9px 10px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 25px;
+  color: #eef1ec;
+  font-size: 9px;
+  text-align: center;
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+.editorial-skills span:hover {
+  background: #e9a72f;
+  border-color: #e9a72f;
+  color: #20251f;
+}
+
+
+/* ---------- 首页与项目区衔接 ---------- */
+
+.editorial-hero + .section {
+  padding-top: 85px;
+}
+
+
+/* ---------- 平板 ---------- */
+
+@media (max-width: 850px) {
+
+  .editorial-hero {
+    width: calc(100% - 40px);
+    padding-top: 45px;
+  }
+
+  .hero-intro {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hello-title {
+    font-size: clamp(65px, 13vw, 90px);
+  }
+
+  .hero-visual {
+    min-height: 430px;
+  }
+
+  .hero-photo {
+    width: 78%;
+    right: 25px;
+  }
+
+  .career-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .career-column + .career-column {
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,.15);
+  }
+
+}
+
+
+/* ---------- 手机 ---------- */
+
+@media (max-width: 520px) {
+
+  .editorial-hero {
+    width: calc(100% - 32px);
+    padding-top: 40px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 17px;
+  }
+
+  .hello-title {
+    font-size: 58px;
+    letter-spacing: -3px;
+  }
+
+  .cn-name {
+    margin-top: 23px;
+  }
+
+  .cn-name strong {
+    font-size: 19px;
+  }
+
+  .hero-summary {
+    font-size: 11px;
+  }
+
+  .hero-visual {
+    min-height: 355px;
+    margin-top: 5px;
+  }
+
+  .hero-photo {
+    top: 15px;
+    right: 0;
+    width: 82%;
+    height: 275px;
+  }
+
+  .visual-number {
+    display: none;
+  }
+
+  .experience-badge {
+    top: 60px;
+    min-width: 125px;
+    padding: 8px 13px;
+  }
+
+  .experience-badge strong {
+    font-size: 21px;
+  }
+
+  .profile-card {
+    width: 235px;
+    padding: 18px 20px;
+  }
+
+  .profile-card > p {
+    font-size: 19px;
+  }
+
+  .career-panel {
+    margin-top: 28px;
+  }
+
+  .career-column {
+    min-height: auto;
+    padding: 25px 20px;
+  }
+
+  .panel-title {
+    grid-template-columns: 20px auto 1fr;
+  }
+
+  .panel-title h2 {
+    font-size: 23px;
+  }
+
+  .editorial-skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .editorial-hero + .section {
+    padding-top: 65px;
+  }
+
+}
