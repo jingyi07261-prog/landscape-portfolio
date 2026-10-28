@@ -1,787 +1,353 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f3f2ec">
-  <meta name="description" content="梁静怡｜景观方案设计师个人作品集">
-  <title>梁静怡 | Landscape Design Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f1eb">
+  <meta name="description" content="梁静怡｜景观方案设计师作品集">
+  <title>梁静怡 — 景观设计作品集</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header class="header">
-  <a class="logo" href="#home">
-    <strong>LIANG JINGYI</strong>
-    <span>LANDSCAPE DESIGN</span>
+  <a class="brand" href="#home">
+    <span class="brand-name">LIANG JINGYI</span>
+    <span class="brand-sub">LANDSCAPE DESIGN PORTFOLIO</span>
   </a>
-
-  <nav>
+  <nav aria-label="主导航">
     <a href="#projects">精选项目</a>
     <a href="#other">其他作品</a>
     <a href="#document">完整项目文本</a>
   </nav>
-
-  <a class="pdf-top" href="portfolio.pdf" target="_blank">
-    PDF ↗
-  </a>
+  <a class="header-pdf" href="portfolio.pdf" target="_blank" rel="noopener">PDF ↗</a>
 </header>
 
-
 <main>
-
-<!-- ==================== HOME ==================== -->
-
-<section class="home" id="home">
-
-  <div class="home-main">
-
-    <div class="home-title">
-      <p class="eyebrow">LANDSCAPE DESIGNER · PORTFOLIO</p>
-
-      <h1>
-        梁静怡
-        <span>LIANG JINGYI</span>
-      </h1>
-
-      <p class="position">
-        景观方案设计师 · 4年工作经验
-      </p>
-    </div>
-
-    <div class="profile">
-      <p class="section-mini">PROFILE / 个人简介</p>
-
-      <p>
-        具有景观方案设计及项目实践经验，参与住宅及相关类型景观项目，
-        工作内容涵盖前期场地分析、概念方案、空间推演、方案深化及成果表达。
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="home-bottom">
-
-    <div class="experience">
-
-      <p class="section-mini">EXPERIENCE / 工作经历</p>
-
-      <div class="exp-row">
-        <span>蓝城设计</span>
-        <strong>景观方案设计师</strong>
+  <section class="hero" id="home">
+    <div class="hero-top">
+      <div class="hero-name">
+        <p class="eyebrow">LANDSCAPE DESIGNER / PORTFOLIO</p>
+        <h1>梁静怡</h1>
+        <p class="english-name">LIANG JINGYI</p>
+        <p class="job-title">景观方案设计师 <span>·</span> 4年工作经验</p>
       </div>
-
-      <div class="exp-row">
-        <span>安道设计</span>
-        <strong>助理景观方案设计师</strong>
+      <div class="profile">
+        <p class="small-label">PROFILE / 个人简介</p>
+        <p>具有景观方案设计及项目实践经验，参与住宅及相关类型景观项目，工作内容涵盖场地分析、概念方案、空间推演、方案深化及成果表达。</p>
       </div>
-
     </div>
 
-
-    <div class="skills">
-
-      <p class="section-mini">CAPABILITIES / 专业能力</p>
-
-      <div class="skill-list">
-        <span>景观方案设计</span>
-        <span>总平面设计</span>
-        <span>场地分析</span>
-        <span>空间推演</span>
-        <span>植物设计</span>
-        <span>效果表达</span>
-        <span>文本排版</span>
+    <div class="hero-bottom">
+      <div class="experience">
+        <p class="small-label">EXPERIENCE / 工作经历</p>
+        <div class="experience-row">
+          <span>蓝城设计</span>
+          <span>景观方案设计师</span>
+        </div>
+        <div class="experience-row">
+          <span>安道设计</span>
+          <span>助理景观方案设计师</span>
+        </div>
       </div>
-
+      <div class="capabilities">
+        <p class="small-label">CAPABILITIES / 专业能力</p>
+        <div class="skill-tags">
+          <span>景观方案设计</span>
+          <span>总平面设计</span>
+          <span>场地分析</span>
+          <span>空间推演</span>
+          <span>植物设计</span>
+          <span>效果表达</span>
+          <span>文本排版</span>
+        </div>
+      </div>
     </div>
 
-  </div>
+    <a class="scroll-link" href="#projects">EXPLORE PROJECTS <span>↓</span></a>
+  </section>
 
-  <a class="scroll-down" href="#projects">
-    SELECTED PROJECTS ↓
-  </a>
-
-</section>
-
-
-
-<!-- ==================== PROJECTS ==================== -->
-
-<section class="section projects" id="projects">
-
-  <div class="section-head">
-    <div>
-      <p class="eyebrow">01 / SELECTED PROJECTS</p>
-      <h2>精选项目</h2>
-    </div>
-
-    <p>住宅景观 · 方案设计 · 项目实践</p>
-  </div>
-
-
-  <div id="project-container"></div>
-
-</section>
-
-
-
-<!-- ==================== OTHER WORK ==================== -->
-
-<section class="section other-section" id="other">
-
-  <div class="section-head">
-    <div>
-      <p class="eyebrow">02 / OTHER WORKS</p>
-      <h2>其他设计作品</h2>
-    </div>
-
-    <p>空间设计 · 概念表达 · 手绘</p>
-  </div>
-
-  <div id="other-container" class="other-grid"></div>
-
-</section>
-
-
-
-<!-- ==================== PDF ==================== -->
-
-<section class="document" id="document">
-
-  <div class="document-inner">
-
-    <div class="document-head">
-
+  <section class="section" id="projects">
+    <div class="section-heading">
       <div>
-        <p class="eyebrow light">
-          03 / FULL PROJECT DOCUMENT
-        </p>
-
-        <h2>完整项目文本</h2>
-
-        <p>
-          查看完整项目过程、场地分析、方案推演及设计成果。
-        </p>
+        <p class="eyebrow">01 / SELECTED PROJECTS</p>
+        <h2>精选项目</h2>
       </div>
-
-      <a href="portfolio.pdf"
-         target="_blank"
-         class="document-button">
-        单独打开 PDF ↗
-      </a>
-
+      <p class="section-note">住宅景观 · 方案设计 · 项目实践</p>
     </div>
+    <div id="project-list" class="project-list"></div>
+  </section>
 
-
-    <div class="pdf-viewer">
-      <iframe
-        src="portfolio.pdf#view=FitH"
-        title="完整项目文本">
-      </iframe>
+  <section class="section other-section" id="other">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">02 / OTHER WORKS</p>
+        <h2>其他设计作品</h2>
+      </div>
+      <p class="section-note">空间设计 · 概念表达 · 手绘</p>
     </div>
+    <div id="other-list" class="other-grid"></div>
+  </section>
 
-
-    <p class="pdf-help">
-      若当前浏览器无法显示在线预览，
-      <a href="portfolio.pdf" target="_blank">
-        点击这里打开完整项目文本 ↗
-      </a>
-    </p>
-
-  </div>
-
-</section>
-
+  <section class="document-section" id="document">
+    <div class="document-inner">
+      <div class="document-heading">
+        <div>
+          <p class="eyebrow eyebrow-light">03 / FULL PROJECT DOCUMENT</p>
+          <h2>完整项目文本</h2>
+          <p class="document-desc">查看更多项目过程、方案推演及设计成果。</p>
+        </div>
+        <a class="document-button" href="portfolio.pdf" target="_blank" rel="noopener">单独打开 PDF ↗</a>
+      </div>
+      <div class="pdf-frame">
+        <iframe src="portfolio.pdf#view=FitH" title="完整项目文本 PDF 预览"></iframe>
+      </div>
+      <p class="pdf-fallback">如果浏览器未显示 PDF，<a href="portfolio.pdf" target="_blank" rel="noopener">点击这里打开完整项目文本 ↗</a></p>
+    </div>
+  </section>
 </main>
 
-
-
-<!-- ==================== FOOTER ==================== -->
-
-<footer>
-
+<footer class="footer">
   <div>
-    <strong>LIANG JINGYI</strong>
-    <span>LANDSCAPE DESIGN PORTFOLIO</span>
+    <span class="footer-name">LIANG JINGYI</span>
+    <span class="footer-sub">LANDSCAPE DESIGN PORTFOLIO</span>
   </div>
-
-  <a href="#home">BACK TO TOP ↑</a>
-
+  <a href="#home">返回顶部 ↑</a>
 </footer>
 
-
-
-<!-- ==================== LIGHTBOX ==================== -->
-
-<div class="lightbox" id="lightbox">
-
-  <button class="lightbox-close" id="lightbox-close">
-    ×
-  </button>
-
-  <button class="lightbox-prev" id="lightbox-prev">
-    ←
-  </button>
-
-  <img id="lightbox-img" src="" alt="项目图片">
-
-  <button class="lightbox-next" id="lightbox-next">
-    →
-  </button>
-
-  <div class="lightbox-info">
+<div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="项目图片放大查看">
+  <button class="lightbox-close" id="lightbox-close" aria-label="关闭">×</button>
+  <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="上一张">←</button>
+  <img id="lightbox-image" alt="项目图片放大预览">
+  <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="下一张">→</button>
+  <div class="lightbox-caption">
     <span id="lightbox-title"></span>
     <span id="lightbox-count"></span>
   </div>
-
 </div>
 
-
-
 <script>
-
-/* ==================================================
-   PROJECT DATA
-================================================== */
-
 const projects = [
-
   {
     title: "佛山金地中南·新城大境项目景观",
     en: "FOSHAN · XINCHENG DAJING",
     folder: "project-01",
-    prefix: "project1",
-    count: 18
+    images: [
+      "project1-01.JPG", "project1-02.JPG", "project1-03.JPG",
+      "project1-04.png", "project1-05.png", "project1-06.png",
+      "project1-07.jpg", "project1-08.png", "project1-09.jpg",
+      "project1-10.png", "project1-11.jpg", "project1-12.png",
+      "project1-13.png", "project1-14.png", "project1-15.png",
+      "project1-16.png", "project1-17.png", "project1-18.png"
+    ]
   },
-
   {
     title: "西安金地·清峯上项目景观",
     en: "XI'AN · QINGFENGSHANG",
     folder: "project-02",
-    prefix: "project2",
-    count: 12
+    images: [
+      "project2-01.jpg", "project2-02.jpg", "project2-03.jpg",
+      "project2-04.jpg", "project2-05.jpg", "project2-06.jpg",
+      "project2-07.jpg", "project2-08.jpg", "project2-09.jpg",
+      "project2-10.jpg", "project2-11.jpg", "project2-12.jpg"
+    ]
   },
-
   {
-    title: "德州庆云 · 人和御园项目景观",
+    title: "德州庆云·人和御园项目景观",
     en: "DEZHOU · RENHE YUYUAN",
     folder: "project-03",
-    prefix: "project3",
-    count: 15
+    images: [
+      "project3-01.jpeg", "project3-02.jpeg", "project3-03.jpeg",
+      "project3-04.png", "project3-05.png", "project3-06.jpg",
+      "project3-07.jpg", "project3-08.png", "project3-09.png",
+      "project3-10.png", "project3-11.png", "project3-12.jpg",
+      "project3-13.jpg", "project3-14.jpg", "project3-15.jpg"
+    ]
   },
-
   {
     title: "呼和浩特绿城明月桂雨项目景观",
     en: "HOHHOT · MINGYUE GUIYU",
     folder: "project-04",
-    prefix: "project4",
-    count: 10
+    images: [
+      "project4-01.JPG", "project4-02.JPG", "project4-03.JPG",
+      "project4-04.png", "project4-05.png", "project4-06.png",
+      "project4-07.png", "project4-08.png", "project4-09.png",
+      "project4-10.png"
+    ]
   }
-
 ];
 
-
 const otherWorks = [
-
   {
     title: "架空层",
     en: "STILT FLOOR",
-    folder: "other-01",
-    prefix: "other1",
-    count: 10
+    folder: "others-01",
+    images: [
+      "others1-01.JPG", "others1-02.JPG", "others1-03.JPG",
+      "others1-04.JPG", "others1-05.JPG", "others1-06.PNG",
+      "others1-07.PNG", "others1-08.PNG", "others1-09.jpg",
+      "others1-10.jpg"
+    ]
   },
-
   {
     title: "庭院景观",
     en: "COURTYARD LANDSCAPE",
-    folder: "other-02",
-    prefix: "other2",
-    count: 10
+    folder: "others-02",
+    images: [
+      "others2-01.png", "others2-02.jpg", "others2-03.jpg",
+      "others2-04.jpg", "others2-05.jpg", "others2-06.jpg",
+      "others2-07.jpg", "others2-08.jpg", "others2-09.jpg",
+      "others2-10.jpg"
+    ]
   },
-
   {
     title: "设计概念",
     en: "DESIGN CONCEPT",
-    folder: "other-03",
-    prefix: "other3",
-    count: 11
+    folder: "others-03",
+    images: [
+      "others3-01.jpg", "others3-02.jpg", "others3-03.jpg",
+      "others3-04.jpg", "others3-05.jpg", "others3-06.jpg",
+      "others3-07.jpg", "others3-08.jpg", "others3-09.jpg",
+      "others3-10.jpg", "others3-11.jpg"
+    ]
   },
-
   {
     title: "手绘",
     en: "HAND DRAWING",
-    folder: "other-04",
-    prefix: "other4",
-    count: 6
+    folder: "others-04",
+    images: [
+      "others4-01.JPG", "others4-02.JPG", "others4-03.JPG",
+      "others4-04.PNG", "others4-05.JPG", "others4-06.JPG"
+    ]
   }
-
 ];
 
-
-/* ==================================================
-   IMAGE PATH
-================================================== */
-
-function imagePath(item, index) {
-
-  const number = String(index + 1).padStart(2, "0");
-
-  return `assets/${item.prefix}-${number}.JPG`;
-
+function imageUrl(item, index) {
+  return `assets/${item.folder}/${item.images[index]}`;
 }
 
-
-/* ==================================================
-   CREATE PROJECT
-================================================== */
-
-function createProject(item, index) {
-
-  const article = document.createElement("article");
-
-  article.className = "project";
-
-  article.innerHTML = `
-
-    <div class="project-number">
-      ${String(index + 1).padStart(2,"0")}
-    </div>
-
-    <div class="slider">
-
-      <button class="slider-arrow slider-prev"
-              aria-label="上一张">
-        ←
-      </button>
-
-      <button class="slider-image"
-              aria-label="点击放大图片">
-
-        <img
-          src="${imagePath(item,0)}"
-          alt="${item.title}"
-          loading="lazy">
-
-        <span class="view-label">
-          VIEW +
-        </span>
-
-      </button>
-
-      <button class="slider-arrow slider-next"
-              aria-label="下一张">
-        →
-      </button>
-
-      <div class="slider-counter">
-        <span class="current">01</span>
-        /
-        ${String(item.count).padStart(2,"0")}
-      </div>
-
-    </div>
-
-
-    <div class="project-text">
-
-      <p>${item.en}</p>
-
-      <h3>${item.title}</h3>
-
-      <span>
-        LANDSCAPE DESIGN
-      </span>
-
-    </div>
-
-  `;
-
-
-  setupSlider(article, item);
-
-  return article;
-
+function pad(number) {
+  return String(number).padStart(2, "0");
 }
 
+function createSlider(item, index, isOther = false) {
+  const card = document.createElement("article");
+  card.className = isOther ? "other-card" : "project-card";
 
-
-/* ==================================================
-   CREATE OTHER WORK
-================================================== */
-
-function createOther(item, index) {
-
-  const article = document.createElement("article");
-
-  article.className = "other-card";
-
-  article.innerHTML = `
-
-    <div class="other-number">
-      0${index + 1}
-    </div>
-
+  card.innerHTML = `
+    <div class="card-index">${pad(index + 1)}</div>
     <div class="slider">
-
-      <button class="slider-arrow slider-prev">
-        ←
+      <button class="slider-arrow slider-prev" aria-label="上一张">←</button>
+      <button class="slider-image" aria-label="点击放大查看">
+        <img src="${imageUrl(item, 0)}" alt="${item.title}" loading="lazy">
+        <span class="view-tag">VIEW +</span>
       </button>
-
-      <button class="slider-image">
-
-        <img
-          src="${imagePath(item,0)}"
-          alt="${item.title}"
-          loading="lazy">
-
-        <span class="view-label">
-          VIEW +
-        </span>
-
-      </button>
-
-      <button class="slider-arrow slider-next">
-        →
-      </button>
-
-      <div class="slider-counter">
-        <span class="current">01</span>
-        /
-        ${String(item.count).padStart(2,"0")}
+      <button class="slider-arrow slider-next" aria-label="下一张">→</button>
+      <div class="slider-meta">
+        <span class="slider-count"><b>01</b> / ${pad(item.images.length)}</span>
+        <span class="slider-progress"><span></span></span>
       </div>
-
     </div>
-
-
-    <div class="other-info">
-
+    <div class="${isOther ? "other-card-info" : "project-card-info"}">
       <div>
-        <p>${item.en}</p>
+        <p class="project-en">${item.en}</p>
         <h3>${item.title}</h3>
+        ${isOther ? "" : '<span class="project-type">LANDSCAPE DESIGN</span>'}
       </div>
-
-      <span>
-        ${String(item.count).padStart(2,"0")} IMAGES
-      </span>
-
+      ${isOther ? `<span class="image-total">${pad(item.images.length)} IMAGES</span>` : ""}
     </div>
-
   `;
 
-
-  setupSlider(article,item);
-
-  return article;
-
-}
-
-
-
-/* ==================================================
-   SLIDER
-================================================== */
-
-function setupSlider(element,item) {
-
+  const imageButton = card.querySelector(".slider-image");
+  const img = card.querySelector(".slider-image img");
+  const count = card.querySelector(".slider-count b");
+  const progress = card.querySelector(".slider-progress span");
   let current = 0;
-
-  const img =
-    element.querySelector(".slider-image img");
-
-  const counter =
-    element.querySelector(".current");
-
-  const prev =
-    element.querySelector(".slider-prev");
-
-  const next =
-    element.querySelector(".slider-next");
-
-  const imageButton =
-    element.querySelector(".slider-image");
-
+  let touchStartX = 0;
 
   function update() {
-
-    img.src = imagePath(item,current);
-
-    counter.textContent =
-      String(current + 1).padStart(2,"0");
-
+    img.src = imageUrl(item, current);
+    img.alt = `${item.title}，第 ${current + 1} 张`;
+    count.textContent = pad(current + 1);
+    progress.style.width = `${((current + 1) / item.images.length) * 100}%`;
   }
 
-
-  next.addEventListener("click", () => {
-
-    current =
-      (current + 1) % item.count;
-
+  function move(step) {
+    current = (current + step + item.images.length) % item.images.length;
     update();
+  }
 
-  });
+  card.querySelector(".slider-prev").addEventListener("click", () => move(-1));
+  card.querySelector(".slider-next").addEventListener("click", () => move(1));
+  imageButton.addEventListener("click", () => openLightbox(item, current));
 
+  imageButton.addEventListener("touchstart", event => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
 
-  prev.addEventListener("click", () => {
+  imageButton.addEventListener("touchend", event => {
+    const delta = touchStartX - event.changedTouches[0].clientX;
+    if (Math.abs(delta) > 45) move(delta > 0 ? 1 : -1);
+  }, { passive: true });
 
-    current =
-      (current - 1 + item.count) % item.count;
-
-    update();
-
-  });
-
-
-  imageButton.addEventListener("click", () => {
-
-    openLightbox(item,current);
-
-  });
-
-
-  /* 手机滑动 */
-
-  let startX = 0;
-
-  imageButton.addEventListener(
-    "touchstart",
-    e => {
-      startX = e.touches[0].clientX;
-    },
-    {passive:true}
-  );
-
-
-  imageButton.addEventListener(
-    "touchend",
-    e => {
-
-      const endX =
-        e.changedTouches[0].clientX;
-
-      const difference =
-        startX - endX;
-
-
-      if(Math.abs(difference) > 50) {
-
-        if(difference > 0) {
-
-          current =
-            (current + 1) % item.count;
-
-        } else {
-
-          current =
-            (current - 1 + item.count)
-            % item.count;
-
-        }
-
-        update();
-
-      }
-
-    },
-    {passive:true}
-  );
-
+  return card;
 }
 
+const projectList = document.getElementById("project-list");
+projects.forEach((item, index) => projectList.appendChild(createSlider(item, index)));
 
+const otherList = document.getElementById("other-list");
+otherWorks.forEach((item, index) => otherList.appendChild(createSlider(item, index, true)));
 
-/* ==================================================
-   BUILD PAGE
-================================================== */
-
-const projectContainer =
-  document.getElementById(
-    "project-container"
-  );
-
-
-projects.forEach(
-  (item,index) => {
-
-    projectContainer.appendChild(
-      createProject(item,index)
-    );
-
-  }
-);
-
-
-
-const otherContainer =
-  document.getElementById(
-    "other-container"
-  );
-
-
-otherWorks.forEach(
-  (item,index) => {
-
-    otherContainer.appendChild(
-      createOther(item,index)
-    );
-
-  }
-);
-
-
-
-/* ==================================================
-   LIGHTBOX
-================================================== */
-
-const lightbox =
-  document.getElementById("lightbox");
-
-const lightboxImg =
-  document.getElementById("lightbox-img");
-
-const lightboxTitle =
-  document.getElementById("lightbox-title");
-
-const lightboxCount =
-  document.getElementById("lightbox-count");
-
-
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxTitle = document.getElementById("lightbox-title");
+const lightboxCount = document.getElementById("lightbox-count");
 let activeItem = null;
 let activeIndex = 0;
 
-
 function updateLightbox() {
-
-  lightboxImg.src =
-    imagePath(activeItem,activeIndex);
-
-  lightboxTitle.textContent =
-    activeItem.title;
-
-  lightboxCount.textContent =
-    `${String(activeIndex + 1).padStart(2,"0")}
-     / 
-     ${String(activeItem.count).padStart(2,"0")}`;
-
+  lightboxImage.src = imageUrl(activeItem, activeIndex);
+  lightboxImage.alt = `${activeItem.title}，第 ${activeIndex + 1} 张`;
+  lightboxTitle.textContent = activeItem.title;
+  lightboxCount.textContent = `${pad(activeIndex + 1)} / ${pad(activeItem.images.length)}`;
 }
 
-
-function openLightbox(item,index) {
-
+function openLightbox(item, index) {
   activeItem = item;
   activeIndex = index;
-
   updateLightbox();
-
-  lightbox.classList.add("open");
-
+  lightbox.classList.add("is-open");
   document.body.classList.add("no-scroll");
-
+  document.getElementById("lightbox-close").focus();
 }
-
 
 function closeLightbox() {
-
-  lightbox.classList.remove("open");
-
+  lightbox.classList.remove("is-open");
   document.body.classList.remove("no-scroll");
-
 }
 
+function moveLightbox(step) {
+  if (!activeItem) return;
+  activeIndex = (activeIndex + step + activeItem.images.length) % activeItem.images.length;
+  updateLightbox();
+}
 
-document
-.getElementById("lightbox-close")
-.addEventListener(
-  "click",
-  closeLightbox
-);
+document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+document.getElementById("lightbox-prev").addEventListener("click", () => moveLightbox(-1));
+document.getElementById("lightbox-next").addEventListener("click", () => moveLightbox(1));
 
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) closeLightbox();
+});
 
-document
-.getElementById("lightbox-next")
-.addEventListener(
-  "click",
-  () => {
-
-    activeIndex =
-      (activeIndex + 1)
-      % activeItem.count;
-
-    updateLightbox();
-
-  }
-);
-
-
-document
-.getElementById("lightbox-prev")
-.addEventListener(
-  "click",
-  () => {
-
-    activeIndex =
-      (activeIndex - 1 + activeItem.count)
-      % activeItem.count;
-
-    updateLightbox();
-
-  }
-);
-
-
-lightbox.addEventListener(
-  "click",
-  e => {
-
-    if(e.target === lightbox) {
-      closeLightbox();
-    }
-
-  }
-);
-
-
-document.addEventListener(
-  "keydown",
-  e => {
-
-    if(
-      !lightbox.classList.contains("open")
-    ) return;
-
-
-    if(e.key === "Escape") {
-      closeLightbox();
-    }
-
-
-    if(e.key === "ArrowRight") {
-
-      activeIndex =
-        (activeIndex + 1)
-        % activeItem.count;
-
-      updateLightbox();
-
-    }
-
-
-    if(e.key === "ArrowLeft") {
-
-      activeIndex =
-        (activeIndex - 1 + activeItem.count)
-        % activeItem.count;
-
-      updateLightbox();
-
-    }
-
-  }
-);
-
+document.addEventListener("keydown", event => {
+  if (!lightbox.classList.contains("is-open")) return;
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") moveLightbox(-1);
+  if (event.key === "ArrowRight") moveLightbox(1);
+});
 </script>
-
 </body>
 </html>
