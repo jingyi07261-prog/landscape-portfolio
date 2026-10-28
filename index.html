@@ -252,6 +252,7 @@ const projects = [
     title: "佛山金地中南·新城大境项目景观",
     en: "FOSHAN · XINCHENG DAJING",
     folder: "project-01",
+    prefix: "project1",
     count: 18
   },
 
@@ -259,6 +260,7 @@ const projects = [
     title: "西安金地·清峯上项目景观",
     en: "XI'AN · QINGFENGSHANG",
     folder: "project-02",
+    prefix: "project2",
     count: 12
   },
 
@@ -266,6 +268,7 @@ const projects = [
     title: "德州庆云 · 人和御园项目景观",
     en: "DEZHOU · RENHE YUYUAN",
     folder: "project-03",
+    prefix: "project3",
     count: 15
   },
 
@@ -273,6 +276,7 @@ const projects = [
     title: "呼和浩特绿城明月桂雨项目景观",
     en: "HOHHOT · MINGYUE GUIYU",
     folder: "project-04",
+    prefix: "project4",
     count: 10
   }
 
@@ -285,6 +289,7 @@ const otherWorks = [
     title: "架空层",
     en: "STILT FLOOR",
     folder: "other-01",
+    prefix: "other1",
     count: 10
   },
 
@@ -292,6 +297,7 @@ const otherWorks = [
     title: "庭院景观",
     en: "COURTYARD LANDSCAPE",
     folder: "other-02",
+    prefix: "other2",
     count: 10
   },
 
@@ -299,6 +305,7 @@ const otherWorks = [
     title: "设计概念",
     en: "DESIGN CONCEPT",
     folder: "other-03",
+    prefix: "other3",
     count: 11
   },
 
@@ -306,6 +313,7 @@ const otherWorks = [
     title: "手绘",
     en: "HAND DRAWING",
     folder: "other-04",
+    prefix: "other4",
     count: 6
   }
 
@@ -320,7 +328,7 @@ function imagePath(item, index) {
 
   const number = String(index + 1).padStart(2, "0");
 
-  return `assets/${item.folder}/${number}.jpg`;
+  return `assets/${item.prefix}-${number}.JPG`;
 
 }
 
