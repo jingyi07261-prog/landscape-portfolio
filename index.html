@@ -66,8 +66,11 @@
 
 <div class="hero-photo profile-photo">
   <img
-    src="assets/profile.JPG"
-    alt="梁静怡">
+<img
+  src="assets/profile.JPG"
+  alt="梁静怡"
+  fetchpriority="high"
+  decoding="async">
 
   <span class="photo-label">
     LANDSCAPE<br>DESIGNER
@@ -185,7 +188,11 @@
         <a class="document-button" href="portfolio.pdf" target="_blank" rel="noopener">单独打开 PDF ↗</a>
       </div>
       <div class="pdf-frame">
-        <iframe src="portfolio.pdf#view=FitH" title="完整项目文本 PDF 预览"></iframe>
+<iframe
+  src="portfolio.pdf#view=FitH"
+  title="完整项目文本 PDF 预览"
+  loading="lazy">
+</iframe>
       </div>
       <p class="pdf-fallback">如果浏览器未显示 PDF，<a href="portfolio.pdf" target="_blank" rel="noopener">点击这里打开完整项目文本 ↗</a></p>
     </div>
@@ -211,54 +218,44 @@
   </div>
 </div>
 
+
 <script>
+/* =========================
+   1. 图片配置
+   所有图片统一使用 01.JPG、02.JPG……
+========================= */
+
+function makeImages(total) {
+  return Array.from(
+    { length: total },
+    (_, i) => `${String(i + 1).padStart(2, "0")}.JPG`
+  );
+}
+
 const projects = [
   {
     title: "佛山金地中南·新城大境项目景观",
     en: "FOSHAN · XINCHENG DAJING",
     folder: "project-01",
-    images: [
-      "project1-01.JPG", "project1-02.JPG", "project1-03.JPG",
-      "project1-04.png", "project1-05.png", "project1-06.png",
-      "project1-07.jpg", "project1-08.png", "project1-09.jpg",
-      "project1-10.png", "project1-11.jpg", "project1-12.png",
-      "project1-13.png", "project1-14.png", "project1-15.png",
-      "project1-16.png", "project1-17.png", "project1-18.png"
-    ]
+    images: makeImages(18)
   },
   {
     title: "西安金地·清峯上项目景观",
     en: "XI'AN · QINGFENGSHANG",
     folder: "project-02",
-    images: [
-      "project2-01.jpg", "project2-02.jpg", "project2-03.jpg",
-      "project2-04.jpg", "project2-05.jpg", "project2-06.jpg",
-      "project2-07.jpg", "project2-08.jpg", "project2-09.jpg",
-      "project2-10.jpg", "project2-11.jpg", "project2-12.jpg"
-    ]
+    images: makeImages(12)
   },
   {
     title: "德州庆云·人和御园项目景观",
     en: "DEZHOU · RENHE YUYUAN",
     folder: "project-03",
-    images: [
-      "project3-01.jpeg", "project3-02.jpeg", "project3-03.jpeg",
-      "project3-04.png", "project3-05.png", "project3-06.jpg",
-      "project3-07.jpg", "project3-08.png", "project3-09.png",
-      "project3-10.png", "project3-11.png", "project3-12.jpg",
-      "project3-13.jpg", "project3-14.jpg", "project3-15.jpg"
-    ]
+    images: makeImages(15)
   },
   {
     title: "呼和浩特绿城明月桂雨项目景观",
     en: "HOHHOT · MINGYUE GUIYU",
     folder: "project-04",
-    images: [
-      "project4-01.JPG", "project4-02.JPG", "project4-03.JPG",
-      "project4-04.png", "project4-05.png", "project4-06.png",
-      "project4-07.png", "project4-08.png", "project4-09.png",
-      "project4-10.png"
-    ]
+    images: makeImages(10)
   }
 ];
 
@@ -267,45 +264,31 @@ const otherWorks = [
     title: "架空层",
     en: "STILT FLOOR",
     folder: "others-01",
-    images: [
-      "others1-01.JPG", "others1-02.JPG", "others1-03.JPG",
-      "others1-04.JPG", "others1-05.JPG", "others1-06.PNG",
-      "others1-07.PNG", "others1-08.PNG", "others1-09.jpg",
-      "others1-10.jpg"
-    ]
+    images: makeImages(10)
   },
   {
     title: "庭院景观",
     en: "COURTYARD LANDSCAPE",
     folder: "others-02",
-    images: [
-      "others2-01.png", "others2-02.jpg", "others2-03.jpg",
-      "others2-04.jpg", "others2-05.jpg", "others2-06.jpg",
-      "others2-07.jpg", "others2-08.jpg", "others2-09.jpg",
-      "others2-10.jpg"
-    ]
+    images: makeImages(10)
   },
   {
     title: "设计概念",
     en: "DESIGN CONCEPT",
     folder: "others-03",
-    images: [
-      "others03-01.jpg", "others03-02.jpg", "others03-03.jpg",
-      "others03-04.jpg", "others03-05.jpg", "others03-06.jpg",
-      "others03-07.jpg", "others03-08.jpg", "others03-09.jpg",
-      "others03-10.jpg", "others03-11.jpg"
-    ]
+    images: makeImages(11)
   },
   {
     title: "手绘",
     en: "HAND DRAWING",
     folder: "others-04",
-    images: [
-      "others4-01.JPG", "others4-02.JPG", "others4-03.JPG",
-      "others4-04.PNG", "others4-05.JPG", "others4-06.JPG"
-    ]
+    images: makeImages(6)
   }
 ];
+
+/* =========================
+   2. 图片路径及辅助功能
+========================= */
 
 function imageUrl(item, index) {
   return `assets/${item.folder}/${item.images[index]}`;
@@ -315,24 +298,75 @@ function pad(number) {
   return String(number).padStart(2, "0");
 }
 
+/* 只预加载指定图片，不提前下载全部作品 */
+const preloadedImages = new Set();
+
+function preloadImage(item, index) {
+  if (!item || index < 0 || index >= item.images.length) return;
+
+  const url = imageUrl(item, index);
+
+  if (preloadedImages.has(url)) return;
+  preloadedImages.add(url);
+
+  const preload = new Image();
+  preload.decoding = "async";
+  preload.src = url;
+}
+
+/* 只预加载当前图片相邻的两张 */
+function preloadNeighbors(item, index) {
+  const total = item.images.length;
+  if (total <= 1) return;
+
+  preloadImage(item, (index + 1) % total);
+  preloadImage(item, (index - 1 + total) % total);
+}
+
+/* =========================
+   3. 创建项目图片轮播
+========================= */
+
 function createSlider(item, index, isOther = false) {
   const card = document.createElement("article");
   card.className = isOther ? "other-card" : "project-card";
 
   card.innerHTML = `
     <div class="card-index">${pad(index + 1)}</div>
+
     <div class="slider">
-      <button class="slider-arrow slider-prev" aria-label="上一张">←</button>
-      <button class="slider-image" aria-label="点击放大查看">
-        <img src="${imageUrl(item, 0)}" alt="${item.title}" loading="lazy">
+      <button
+        class="slider-arrow slider-prev"
+        aria-label="上一张"
+        type="button">←</button>
+
+      <button
+        class="slider-image"
+        aria-label="点击放大查看"
+        type="button">
+
+        <img
+          src="${imageUrl(item, 0)}"
+          alt="${item.title}"
+          loading="lazy"
+          decoding="async">
+
         <span class="view-tag">VIEW +</span>
       </button>
-      <button class="slider-arrow slider-next" aria-label="下一张">→</button>
+
+      <button
+        class="slider-arrow slider-next"
+        aria-label="下一张"
+        type="button">→</button>
+
       <div class="slider-meta">
-        <span class="slider-count"><b>01</b> / ${pad(item.images.length)}</span>
+        <span class="slider-count">
+          <b>01</b> / ${pad(item.images.length)}
+        </span>
         <span class="slider-progress"><span></span></span>
       </div>
     </div>
+
     <div class="${isOther ? "other-card-info" : "project-card-info"}">
       <div>
         <p class="project-en">${item.en}</p>
@@ -347,24 +381,39 @@ function createSlider(item, index, isOther = false) {
   const img = card.querySelector(".slider-image img");
   const count = card.querySelector(".slider-count b");
   const progress = card.querySelector(".slider-progress span");
+
   let current = 0;
   let touchStartX = 0;
 
   function update() {
     img.src = imageUrl(item, current);
     img.alt = `${item.title}，第 ${current + 1} 张`;
+
     count.textContent = pad(current + 1);
-    progress.style.width = `${((current + 1) / item.images.length) * 100}%`;
+
+    progress.style.width =
+      `${((current + 1) / item.images.length) * 100}%`;
+
+    /* 用户切换后，提前准备相邻图片 */
+    preloadNeighbors(item, current);
   }
 
   function move(step) {
-    current = (current + step + item.images.length) % item.images.length;
+    current =
+      (current + step + item.images.length) % item.images.length;
+
     update();
   }
 
-  card.querySelector(".slider-prev").addEventListener("click", () => move(-1));
-  card.querySelector(".slider-next").addEventListener("click", () => move(1));
-  imageButton.addEventListener("click", () => openLightbox(item, current));
+  card.querySelector(".slider-prev")
+    .addEventListener("click", () => move(-1));
+
+  card.querySelector(".slider-next")
+    .addEventListener("click", () => move(1));
+
+  imageButton.addEventListener("click", () => {
+    openLightbox(item, current);
+  });
 
   imageButton.addEventListener("touchstart", event => {
     touchStartX = event.changedTouches[0].clientX;
@@ -372,38 +421,67 @@ function createSlider(item, index, isOther = false) {
 
   imageButton.addEventListener("touchend", event => {
     const delta = touchStartX - event.changedTouches[0].clientX;
-    if (Math.abs(delta) > 45) move(delta > 0 ? 1 : -1);
+
+    if (Math.abs(delta) > 45) {
+      move(delta > 0 ? 1 : -1);
+    }
   }, { passive: true });
 
   return card;
 }
 
+/* =========================
+   4. 渲染作品列表
+========================= */
+
 const projectList = document.getElementById("project-list");
-projects.forEach((item, index) => projectList.appendChild(createSlider(item, index)));
+
+projects.forEach((item, index) => {
+  projectList.appendChild(createSlider(item, index));
+});
 
 const otherList = document.getElementById("other-list");
-otherWorks.forEach((item, index) => otherList.appendChild(createSlider(item, index, true)));
+
+otherWorks.forEach((item, index) => {
+  otherList.appendChild(createSlider(item, index, true));
+});
+
+/* =========================
+   5. 图片放大查看
+========================= */
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const lightboxTitle = document.getElementById("lightbox-title");
 const lightboxCount = document.getElementById("lightbox-count");
+
 let activeItem = null;
 let activeIndex = 0;
 
 function updateLightbox() {
   lightboxImage.src = imageUrl(activeItem, activeIndex);
-  lightboxImage.alt = `${activeItem.title}，第 ${activeIndex + 1} 张`;
+  lightboxImage.alt =
+    `${activeItem.title}，第 ${activeIndex + 1} 张`;
+
+  lightboxImage.decoding = "async";
   lightboxTitle.textContent = activeItem.title;
-  lightboxCount.textContent = `${pad(activeIndex + 1)} / ${pad(activeItem.images.length)}`;
+
+  lightboxCount.textContent =
+    `${pad(activeIndex + 1)} / ${pad(activeItem.images.length)}`;
+
+  /* 提前准备放大查看时的下一张和上一张 */
+  preloadNeighbors(activeItem, activeIndex);
 }
 
 function openLightbox(item, index) {
   activeItem = item;
   activeIndex = index;
+
   updateLightbox();
+
   lightbox.classList.add("is-open");
   document.body.classList.add("no-scroll");
+
   document.getElementById("lightbox-close").focus();
 }
 
@@ -414,13 +492,22 @@ function closeLightbox() {
 
 function moveLightbox(step) {
   if (!activeItem) return;
-  activeIndex = (activeIndex + step + activeItem.images.length) % activeItem.images.length;
+
+  activeIndex =
+    (activeIndex + step + activeItem.images.length)
+    % activeItem.images.length;
+
   updateLightbox();
 }
 
-document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
-document.getElementById("lightbox-prev").addEventListener("click", () => moveLightbox(-1));
-document.getElementById("lightbox-next").addEventListener("click", () => moveLightbox(1));
+document.getElementById("lightbox-close")
+  .addEventListener("click", closeLightbox);
+
+document.getElementById("lightbox-prev")
+  .addEventListener("click", () => moveLightbox(-1));
+
+document.getElementById("lightbox-next")
+  .addEventListener("click", () => moveLightbox(1));
 
 lightbox.addEventListener("click", event => {
   if (event.target === lightbox) closeLightbox();
@@ -428,6 +515,7 @@ lightbox.addEventListener("click", event => {
 
 document.addEventListener("keydown", event => {
   if (!lightbox.classList.contains("is-open")) return;
+
   if (event.key === "Escape") closeLightbox();
   if (event.key === "ArrowLeft") moveLightbox(-1);
   if (event.key === "ArrowRight") moveLightbox(1);
